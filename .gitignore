@@ -7,4 +7,7 @@ __pycache__/
 *.so
 
 # Media
-./sfx/*
+sfx/*
+
+# Fade candy opc files
+opc.py

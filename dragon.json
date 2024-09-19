@@ -1,0 +1,42 @@
+{
+	"player": {
+		"channels": 8,
+		"ignore_case": true,
+		"stop_key": "o",
+		"pause_key": "p",
+		"volume_up": ">",
+		"volume_down": "<"
+	},
+	"ambients": [
+		{
+			"filename": "sfx/dragon_background.mp3",
+			"volume": 0.4,
+			"autostart": true
+		},
+		{
+			"filename": "sfx/boat_background.mp3"
+		},
+        {
+			"filename": "sfx/space_background.mp3"
+        }
+	],
+	"effects": [
+		{
+			"filename": "sfx/roar1.mp3",
+			"channel": 0,
+			"key": "q",
+			"retrigger": true
+		},
+		{
+			"filename": "sfx/fire1.mp3",
+			"channel": 1,
+			"key": "w"
+		},
+		{
+			"filename": "sfx/flap1.mp3",
+			"channel": 2,
+			"loops": 5,
+			"key": "e"
+		}
+	]
+}

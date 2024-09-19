@@ -1,0 +1,49 @@
+{
+	"player": {
+		"channels": 8,
+		"ignore_case": true
+	},
+	"ambients": [
+		{
+			"filename": "base.mp3",
+			"autostart": true
+		},
+        {
+			"filename": "single.mp3",
+			"loops": 0,
+			"key": "1"
+        },
+		{
+			"filename": "looped.mp3",
+			"loops": 1,
+			"volume": 0.5,
+			"key": "2",
+            "fade_in": 100
+		}
+	],
+	"effects": [
+		{
+			"filename": "beep.mp3",
+			"channel": 0,
+			"key": "q"
+		},
+		{
+			"filename": "retrigger.mp3",
+			"channel": 1,
+			"key": "w",
+			"retrigger": true
+		},
+		{
+			"filename": "fade_in.mp3",
+			"channel": 1,
+			"key": "e",
+			"fade_in": 100
+		},
+        {
+			"filename": "quiet.mp3",
+			"channel": 2,
+			"key": "r",
+            "volume": 0.3
+		}
+	]
+}
