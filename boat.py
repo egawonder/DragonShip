@@ -270,8 +270,6 @@ class Boat:
             self.rail_left[ix].color = self.rail_left[ix+1].color
             self.rail_right[ix].color = self.rail_right[ix+1].color
 
-        self.spin_nacelles(america=True)
-
     def speed_boat(self) -> None:
         self.boat()     # The regular boat but super fast
 
@@ -486,13 +484,16 @@ def main(args) -> None:
                     running = False
 
                 # Handle the change in animation routines.
-                elif event.key in MODES:
-                    new_mode = MODES[event.key]
+                elif event.key in MODES_KEYS:
+                    new_mode = MODES_KEYS[event.key]
                     if new_mode != boat.mode:
-                        print(f"Setting mode: {MODES[event.key]!r}")
+                        print(f"Setting mode: {MODES_KEYS[event.key]!r}")
+                        print(f"{new_mode=}")
                         for music in sounds.ambients:
-                            if music.filename.startswith(new_mode):
+                            fn = os.path.split(music.filename)[-1]
+                            if fn.startswith(new_mode):
                                 sounds.play_ambient(music)
+                                print("Playing:", music)
                                 break
                         boat.mode = new_mode
                         rate = int(1.0 / RATES[boat.mode] * 1000)  # frame rate in ms
