@@ -320,7 +320,7 @@ class Boat:
                 rail[dot+1].color = (200, 200, 200)
 
         # The enterprise and dragon don't get the KITT-esque Larson scanner
-        if alt_mode is not None:
+        if alt_mode is None:
             self.kitt_pos += self.kitt_dir
             if (self.kitt_pos < 1) or (self.kitt_pos > (KITT_SIZE - 2) * 2):
                 self.kitt_dir *= -1
@@ -488,12 +488,10 @@ def main(args) -> None:
                     new_mode = MODES_KEYS[event.key]
                     if new_mode != boat.mode:
                         print(f"Setting mode: {MODES_KEYS[event.key]!r}")
-                        print(f"{new_mode=}")
                         for music in sounds.ambients:
                             fn = os.path.split(music.filename)[-1]
                             if fn.startswith(new_mode):
                                 sounds.play_ambient(music)
-                                print("Playing:", music)
                                 break
                         boat.mode = new_mode
                         rate = int(1.0 / RATES[boat.mode] * 1000)  # frame rate in ms
